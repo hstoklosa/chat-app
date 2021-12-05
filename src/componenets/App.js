@@ -4,7 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../database/useDB';
 
 import Home from './Home';
-import Chat from './Chat';
+import Chat from './chat/ChatRoom';
 import ProtectedRoute from './ProtectedRoute';
 
 const App = () => {
@@ -15,19 +15,20 @@ const App = () => {
     if (user) navigate('/chat');
   }, [user]);
 
+
   return (<>
     <header>
 
     </header>
     <main>
-        <Routes>
-          <Route exact path="/" element={<Home />}/>
-          <Route exact path="/chat" element={
-            <ProtectedRoute isAuth={user ? true : false}>
-              <Chat />
-            </ProtectedRoute>
-          }/>
-        </Routes>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/chat" element={
+          <ProtectedRoute isAuth={user ? true : false}>
+            <Chat />
+          </ProtectedRoute>
+        } />
+      </Routes>
     </main>
   </>)
 }

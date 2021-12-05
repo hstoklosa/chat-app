@@ -3,6 +3,7 @@ import { getFirestore } from 'firebase/firestore';
 import { app } from './db';
 
 export const auth = getAuth(app);
+export const firestore = getFirestore(app);
 export const user = auth.currentUser;
 
 export const signInWithGoogle = async () => {

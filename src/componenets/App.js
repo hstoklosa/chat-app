@@ -12,12 +12,8 @@ const App = () => {
   const [user, loading, error] = useAuthState(auth);
 
   useEffect(() => {
-    if (user) navigate('/chat')
-  }, [user])
-
-  if (loading) {
-    return <></>
-  }
+    if (user) navigate('/chat');
+  }, [user]);
 
   return (<>
     <header>

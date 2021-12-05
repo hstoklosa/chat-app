@@ -5,7 +5,7 @@ const ProtectedRoute = ({ isAuth, children }) => {
    let navigate = useNavigate();
    
    if (isAuth) {
-      return children
+      return children;
    }
    return (<div> {navigate('/')} </div>)
 }
